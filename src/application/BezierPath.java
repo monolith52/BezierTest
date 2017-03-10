@@ -38,7 +38,7 @@ public class BezierPath {
 			it * it * it * p1.getY();
 	}
 	
-	public void draw(GraphicsContext gc, Color color) {
+	public void draw(GraphicsContext gc, Color color, double width) {
 //		gc.setStroke(Color.RED);
 //		gc.setLineWidth(1.0d);
 //		gc.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
@@ -46,7 +46,7 @@ public class BezierPath {
 //		gc.strokeLine(p3.getX(), p3.getY(), p4.getX(), p4.getY());
 		
 		gc.setStroke(color);
-		gc.setLineWidth(8.0d);
+		gc.setLineWidth(width);
 		double t2 = 0.0d;
 		for (double t = from.get(); t < to.get(); t += step) {
 			t2 = Math.min(t + step, to.get());

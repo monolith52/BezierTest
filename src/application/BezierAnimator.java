@@ -12,11 +12,12 @@ public class BezierAnimator {
 	
 	BezierPath bezier1, bezier2;
 	Color color;
+	double width = 8.0d;
 	
 	public BezierAnimator() {
 		bezier1 = initialRandBezier();
 		bezier2 = nextRandBezier(bezier1);
-		color = new Color(Math.random(), Math.random(), Math.random(), 1.0d);
+		color = new Color(Math.random() * 0.7d + 0.3d, Math.random() * 0.7d + 0.3d, Math.random() * 0.7d + 0.3d, 1.0d);
 	}
 
 	public void animate() {
@@ -37,8 +38,8 @@ public class BezierAnimator {
 	}
 
 	public void draw(GraphicsContext gc) {
-		bezier1.draw(gc, color);
-		bezier2.draw(gc, color);
+		bezier1.draw(gc, color, width);
+		bezier2.draw(gc, color, width);
 	}
 	
 	private Point2D getRandPoint() {
